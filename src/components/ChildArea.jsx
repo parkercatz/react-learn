@@ -1,10 +1,17 @@
+import { memo } from "react";
+
 const styles = {
   width: "100%",
   height: "200px",
   backgroundColor: "khaki"
 };
 
-export const ChildArea = ({ open }) => {
+export const ChildArea = memo(({ open }) => {
+  console.log("ChildAreaがレンダリングされた");
+  const data = [...Array(20).keys()];
+  data.forEach(() => {
+    console.log("...");
+  });
   return (
     <>
       {open ? (
@@ -14,4 +21,4 @@ export const ChildArea = ({ open }) => {
       ) : null}
     </>
   );
-};
+});
