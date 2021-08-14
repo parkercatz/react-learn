@@ -6,7 +6,7 @@ const styles = {
   backgroundColor: "khaki"
 };
 
-export const ChildArea = memo(({ open }) => {
+export const ChildArea = memo(({ open, onClickClose }) => {
   console.log("ChildAreaがレンダリングされた");
   const data = [...Array(20).keys()];
   data.forEach(() => {
@@ -17,6 +17,7 @@ export const ChildArea = memo(({ open }) => {
       {open ? (
         <div style={styles}>
           <p>子コンポーネント</p>
+          <button onClick={onClickClose}>閉じる</button>
         </div>
       ) : null}
     </>
